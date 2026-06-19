@@ -11,6 +11,7 @@ use App\Http\Controllers\InscripcionController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\GestionIntegradaController;
 
 // Redirigir al login si nadie ha entrado
 Route::get('/', fn() => redirect()->route('login'));
@@ -35,4 +36,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('asistencias', AsistenciaController::class);
     Route::get('/reportes', [ReporteController::class, 'index'])->name('reportes.index');
     Route::resource('grupos', GrupoController::class);
+    Route::get('/gestion', [GestionIntegradaController::class, 'index'])->name('gestion.index');
+Route::get('/portal-gestion', [GestionIntegradaController::class, 'index'])->name('gestion.index');
+Route::post('/pagos/store', [PagoController::class, 'store'])->name('pagos.store');
+Route::post('/asistencia/store', [AsistenciaController::class, 'store'])->name('asistencia.store');
+
 });

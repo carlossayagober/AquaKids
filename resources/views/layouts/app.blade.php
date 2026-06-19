@@ -42,14 +42,9 @@
                 <span class="text-sm font-semibold">Inscripciones</span>
             </a>
 
-            <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ Request::routeIs('asistencias.*') ? 'bg-blue-50 text-blue-600 font-bold shadow-sm' : 'text-on-surface-variant hover:bg-surface-container-low' }}" href="/asistencias">
-                <span class="material-symbols-outlined" style="{{ Request::routeIs('asistencias.*') ? 'font-variation-settings: \'FILL\' 1' : '' }}">calendar_month</span>
-                <span class="text-sm font-semibold">Asistencias</span>
-            </a>
-
-            <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ Request::routeIs('pagos.*') ? 'bg-blue-50 text-blue-600 font-bold shadow-sm' : 'text-on-surface-variant hover:bg-surface-container-low' }}" href="/pagos">
-                <span class="material-symbols-outlined" style="{{ Request::routeIs('pagos.*') ? 'font-variation-settings: \'FILL\' 1' : '' }}">payments</span>
-                <span class="text-sm font-semibold">Pagos</span>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ Request::routeIs('gestion.*') ? 'bg-blue-50 text-blue-600 font-bold shadow-sm' : 'text-on-surface-variant hover:bg-surface-container-low' }}" href="{{ route('gestion.index') }}">
+                <span class="material-symbols-outlined" style="{{ Request::routeIs('gestion.*') ? 'font-variation-settings: \'FILL\' 1' : '' }}">receipt_long</span>
+                <span class="text-sm font-semibold">Asistencias y Pagos</span>
             </a>
 
             <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ Request::routeIs('entrenadores.*') ? 'bg-blue-50 text-blue-600 font-bold shadow-sm' : 'text-on-surface-variant hover:bg-surface-container-low' }}" href="{{ route('entrenadores.index') }}">

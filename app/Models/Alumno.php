@@ -31,4 +31,21 @@ class Alumno extends Model
     {
         return $this->belongsTo(Nivel::class, 'nivel_actual_id');
     }
+
+// Relación: Un alumno tiene muchas asistencias
+    public function asistencias()
+    {
+        return $this->hasMany(Asistencia::class);
+    }
+
+    // Relación: Un alumno tiene muchos pagos
+    public function pagos()
+    {
+        return $this->hasMany(Pago::class);
+    }
+
+
+
+
+
 }
